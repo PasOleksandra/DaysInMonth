@@ -42,5 +42,5 @@ jobs:
     
     - name: Build and push
       run: |
-        docker build -t sshkpm/aws:latest .
-        docker push sshkpm/aws:latest
+        docker build -t sshkpm:latest .
+        docker push sshkpm:latest
