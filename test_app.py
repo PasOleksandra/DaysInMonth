@@ -3,7 +3,6 @@ from eks import get_days_in_month
 
 class TestDaysInMonth(unittest.TestCase):
     def test_valid_months(self):
-        """Тест правильного визначення кількості днів у місяцях."""
         self.assertEqual(get_days_in_month("January"), 31)
         self.assertEqual(get_days_in_month("February"), 28)
         self.assertEqual(get_days_in_month("March"), 31)
@@ -18,12 +17,10 @@ class TestDaysInMonth(unittest.TestCase):
         self.assertEqual(get_days_in_month("December"), 31)
 
     def test_invalid_month(self):
-        """Тест генерації виключення для некоректного місяця."""
         with self.assertRaises(ValueError):
             get_days_in_month("InvalidMonth")
 
     def test_case_insensitivity(self):
-        """Тест, що функція працює з різним регістром введення."""
         self.assertEqual(get_days_in_month("january"), 31)
         self.assertEqual(get_days_in_month("FEBRUARY"), 28)
         self.assertEqual(get_days_in_month("MaRcH"), 31)
